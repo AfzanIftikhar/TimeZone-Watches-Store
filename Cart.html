@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+        }
+        .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-light-gray-background-texture-image_995291.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main h2{
+    font-size: 5em;
+    color: #0B1C39;
+
+}
+  #cart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .cart-item {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f9f9f9;
+  }
+
+  .cart-item img {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .cart-item h3 {
+    margin: 0;
+  }
+
+  .cart-item button {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: crimson;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .cart-item button:hover {
+    background: darkred;
+  }
+    .h3{
+    font-size: 2em;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    
+  }
+</style>
+
+
+</head>
+<body>
+   
+    <div class="main">
+        <h2>🛒 Your Cart</h2>
+
+    </div>
+<div id="cart"></div>
+
+<script>
+  const cartContainer = document.getElementById("cart");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = "<p>Cart is empty.</p>";
+  } else {
+    cart.forEach((item, index) => {
+      // Create cart item card
+      const card = document.createElement("div");
+      card.classList.add("cart-item");
+
+      // Image
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = item.name;
+      img.width = 120; // adjust size
+      img.height = 120;
+
+      // Info container
+      const info = document.createElement("div");
+
+      const name = document.createElement("h3");
+      name.textContent = item.name;
+
+      const price = document.createElement("p");
+      price.textContent = `Price: $${item.price}`;
+
+      const desc = document.createElement("p");
+      desc.textContent = item.desc;
+
+      // Remove button
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.addEventListener("click", () => {
+        cart.splice(index, 1); // remove from array
+        localStorage.setItem("cart", JSON.stringify(cart)); // update localStorage
+        location.reload(); // reload to update view
+      });
+
+      info.appendChild(name);
+      info.appendChild(price);
+      info.appendChild(desc);
+      info.appendChild(removeBtn);
+
+      card.appendChild(img);
+      card.appendChild(info);
+      cartContainer.appendChild(card);
+    });
+
+    // Show total
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const totalLine = document.createElement("h3");
+    totalLine.textContent = `Total: $${total}`;
+    totalLine.classList.add("h3")
+    cartContainer.appendChild(totalLine);
+  }
+</script>
+
+
+    
+</body>
+</html>
