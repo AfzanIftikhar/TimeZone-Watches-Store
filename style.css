@@ -159,25 +159,25 @@ span{
 }
 #pic1{
     width: 60%;
-    background:  url(/Pics\ for\ website/pic1.avif);    
+    background:  url(/Pics-for-Website/Pic1.avif);    
     background-repeat:no-repeat ;
     background-size: cover;
     
 }
 #pic2{
     width: 50%;
-    background: url(Pics\ for\ website/pic2.avif);
+    background: url(/Pics-for-Website/Pic2.avif);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #pic1:hover{
-      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(Pics\ for\ website/pic1.avif);
+      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(/Pics-for-Website/Pic1.avif);
       scale: 0.99;
     
 }
 #pic2:hover{
-      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(Pics\ for\ website/pic2.avif);
+      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(/Pics-for-Website/Pic2.avif);
       scale: 0.99;
     
 }
@@ -192,24 +192,24 @@ span{
 #pic3{
     width: 100%;
     height: 50vh;
-    background: url(Pics\ for\ website/pic3.avif);
+    background: url(/Pics-for-Website/Pic3.avif);
     background-repeat: no-repeat;
     background-size: cover;
 }
 #pic3:hover{
-      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(Pics\ for\ website/pic3.avif);
+      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(/Pics-for-Website/Pic4.avif);
       scale: 0.99;
     
 }
 #pic4{
     width: 100%;
     height: 50vh;
-    background: url(Pics\ for\ website/pic4.avif);
+    background: url(/Pics-for-Website/Pic4.avif);
     background-repeat: no-repeat;
     background-size: cover;
 }
 #pic4:hover{
-      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(Pics\ for\ website/pic4.avif);
+      background-image: linear-gradient(rgba(0,0,0,1) , rgba(0,0,0,0) ), url(/Pics-for-Website/Pic4.avif);
       scale: 0.99;
     
 }
